@@ -26,9 +26,10 @@ function startUserSession(req, res, user) {
     console.log('login valid... start user session now for userid ' + user.userid);
 
     req.session.user = {
-        userid: user.userid,
-        username: user.username
-    };
+    userid: user.userid,
+    username: user.username,
+    roleid: user.username === 'admin1' ? 1 : 2
+};
 
     res.redirect('/');
 }
