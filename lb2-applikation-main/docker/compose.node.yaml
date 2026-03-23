@@ -12,11 +12,11 @@ services:
       - DB_USER=root
       - DB_PASSWORD=Some.Real.Secr3t
       - DB_NAME=m183_lb2
-      - NODE_ENV=production
+      - NODE_ENV=development
       ports:
         - "80:3000"
       volumes:
         - type: bind
           source: ../todo-list-node
           target: /home/node/app
-      command: "npm start"
+      command: sh -c "npm install && npm start"
